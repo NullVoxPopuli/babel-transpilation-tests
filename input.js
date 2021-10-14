@@ -6,4 +6,6 @@ class A {
   }
 
   get c() { return this.#b; }
+
+  @f g;
 }
