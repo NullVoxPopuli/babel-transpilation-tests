@@ -1,3 +1,11 @@
+function f(target, key, desc) {
+  let oldGet = desc.get
+
+  desc.get = () => {
+    console.log('called f on ', key);
+    return oldGet();
+  };
+}
 class A {
   #a = 'hi';
 
@@ -9,3 +17,7 @@ class A {
 
   @f g;
 }
+
+let a = new A();
+
+console.log(f.g, a.c);

@@ -6,6 +6,15 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
 
 function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
 
+function f(target, key, desc) {
+  let oldGet = desc.get;
+
+  desc.get = () => {
+    console.log('called f on ', key);
+    return oldGet();
+  };
+}
+
 let A = (_class = class A {
   #a = 'hi';
 
@@ -24,3 +33,5 @@ let A = (_class = class A {
   writable: true,
   initializer: null
 })), _class);
+let a = new A();
+console.log(f.g, a.c);
