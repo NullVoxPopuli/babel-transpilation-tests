@@ -14,6 +14,8 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/plugin-proposal-decorators": "^7.15.8",
-    "@babel/preset-env": "^7.15.8"
+    "@babel/plugin-transform-typescript": "^7.26.7",
+    "@babel/preset-env": "^7.15.8",
+    "decorator-transforms": "^2.3.0"
   }
 }
